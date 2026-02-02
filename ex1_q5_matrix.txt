@@ -1,0 +1,66 @@
+import java.util.Scanner;
+
+public class ex1_matrix {
+    public static void main(String[] args) {
+
+        int[][] a = {{2, 5}, {3, 6}};
+        int[][] b = {{3, 8}, {6, 8}};
+        int[][] c = new int[2][2];
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("1 = multiplication");
+        System.out.println("2 = addition");
+        System.out.println("3 = transpose of a");
+        System.out.println("4 = transpose of b");
+        System.out.println("Enter your choice:");
+        int choice = sc.nextInt();
+
+        switch (choice) {
+
+            case 1: // multiplication (element-wise)
+                for (int i = 0; i < a.length; i++) {
+                    for (int j = 0; j < a[0].length; j++) {
+                        c[i][j] = a[i][j] * b[i][j];
+                    }
+                }
+                break;
+
+            case 2: // addition
+                for (int i = 0; i < a.length; i++) {
+                    for (int j = 0; j < a[0].length; j++) {
+                        c[i][j] = a[i][j] + b[i][j];
+                    }
+                }
+                break;
+
+            case 3: // transpose of a
+                for (int i = 0; i < a.length; i++) {
+                    for (int j = 0; j < a[0].length; j++) {
+                        c[i][j] = a[j][i];
+                    }
+                }
+                break;
+
+            case 4: // transpose of b
+                for (int i = 0; i < b.length; i++) {
+                    for (int j = 0; j < b[0].length; j++) {
+                        c[i][j] = b[j][i];
+                    }
+                }
+                break;
+
+            default:
+                System.out.println("Invalid choice");
+        }
+
+        // display result
+        System.out.println("Result matrix:");
+        for (int i = 0; i < c.length; i++) {
+            for (int j = 0; j < c[0].length; j++) {
+                System.out.print(c[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
