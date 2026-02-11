@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+class Area{
+    int length;
+    int breadth;
+    void setDim(int length,int breadth){
+        this.length=length;
+        this.breadth=breadth;
+
+    }
+    int getArea(){
+        return length*breadth;
+    }
+}
+public class ex2_q2 {
+    public static void main(String[] args) {
+        Area a=new Area();
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter length:");
+        int length=sc.nextInt();
+        System.out.println("Enter breadth:");
+        int breadth=sc.nextInt();
+        a.setDim(length,breadth);
+        System.out.println("Area of Rectangle is:"+a.getArea());
+
+    }
+}

@@ -1,0 +1,39 @@
+class Employee {
+    String fname;
+    String lname;
+    double salary;
+
+    Employee(String fname, String lname, double salary) {
+        this.fname = fname;
+        this.lname = lname;
+        if (salary < 0)
+            this.salary = 0.0;
+        else
+            this.salary = salary;
+    }
+
+    void display() {
+        System.out.println("Employee Name: " + fname + " " + lname);
+        System.out.println("Salary: " + salary);
+    }
+
+    void raiseSalary() {
+        salary = salary + (salary * 0.10);
+        System.out.println("After 10% Raise Salary: " + salary);
+    }
+}
+
+public class EmployeeTest {
+    public static void main(String[] args) {
+        Employee e1 = new Employee("Srushti", "Kore", 10000);
+        Employee e2 = new Employee("Sushant", "Patil", 105090);
+
+        e1.display();
+        e1.raiseSalary();
+
+        System.out.println();
+
+        e2.display();
+        e2.raiseSalary();
+    }
+}
